@@ -1,0 +1,18 @@
+{
+	"recommendations": [
+		"formulahendry.auto-close-tag",
+		"formulahendry.auto-rename-tag",
+		"aaron-bond.better-comments",
+		"streetsidesoftware.code-spell-checker",
+		"naumovs.color-highlight",
+		"dsznajder.es7-react-js-snippets",
+		"dbaeumer.vscode-eslint",
+		"eamodio.gitlens",
+		"wix.vscode-import-cost",
+		"oderwat.indent-rainbow",
+		"pkief.material-icon-theme",
+		"esbenp.prettier-vscode",
+		"robbowen.synthwave-vscode",
+		"britesnow.vscode-toggle-quotes",
+	]
+}
