@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ready-script": "node .script/ready-script.mjs"
   },
   "dependencies": {
     "next": "15.0.4",
@@ -31,6 +32,7 @@
     "husky": "^8.0.0",
     "lint-staged": "^15.3.0",
     "prettier": "^3.4.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "zx": "^8.3.0"
   }
 }
