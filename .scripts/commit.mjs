@@ -1,4 +1,4 @@
-import { $, quote } from "zx";
+import { $ } from "zx";
 import inquirer from "inquirer";
 
 const promptCommitMessage = async () => {
