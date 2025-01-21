@@ -8,14 +8,18 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "ready-script": "node .script/ready-script.mjs"
+    "ready-script": "node .scripts/ready-script.mjs",
+    "commit": "git add . && node .scripts/commit.mjs"
   },
   "dependencies": {
+    "inquirer": "^12.3.2",
     "next": "15.0.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
