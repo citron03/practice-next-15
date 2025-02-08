@@ -14,6 +14,7 @@ export default function Home() {
       <Link href="/compiler-test">compiler test</Link>
       <Link href="/mouse-event-order-test">mouse event order test</Link>
       <Link href="/mouse-event-test">mouse event test</Link>
+      <Link href="/modal-xstate">modal xstate</Link>
     </div>
   );
 }
