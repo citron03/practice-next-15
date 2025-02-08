@@ -12,10 +12,12 @@
     "commit": "git add . && node .scripts/commit.mjs"
   },
   "dependencies": {
+    "@xstate/react": "^5.0.2",
     "inquirer": "^12.3.2",
     "next": "15.0.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "xstate": "^5.19.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
