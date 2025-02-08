@@ -45,10 +45,14 @@ const ModalXstate = () => {
         >
           Call Api
         </button>
-        <div>
-          <h1>API RESULT</h1>
-          <p>{apiState.context.result.title}</p>
-        </div>
+        {apiState.value !== 'success' ? (
+          <div>Loading...</div>
+        ) : (
+          <div>
+            <h1>API RESULT</h1>
+            <p>{apiState.context.result.title}</p>
+          </div>
+        )}
       </div>
     </div>
   );
