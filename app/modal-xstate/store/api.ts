@@ -16,16 +16,19 @@ export const todoMachine = setup({
       result: ApiResult;
       error: unknown;
     },
+    // FETCH 이벤트에 userId가 포함되고, RETRY 이벤트도 정의합니다.
+    events: {} as { type: 'FETCH'; userId: number } | { type: 'RETRY' },
   },
   actors: {
+    // fromPromise를 사용하여 비동기 actor를 정의합니다.
+    // 이 actor는 input으로 { userId: number } 타입의 값을 받습니다.
     fetchTodo: fromPromise<unknown, { userId: number }>(async ({ input }) => {
-      const user = await fakeApiCall(input?.userId);
-
+      const user = await fakeApiCall(input.userId);
       return user;
     }),
   },
 }).createMachine({
-  id: 'user',
+  id: 'todo',
   initial: 'idle',
   context: {
     result: {
@@ -46,18 +49,24 @@ export const todoMachine = setup({
       invoke: {
         id: 'getTodo',
         src: 'fetchTodo',
-        input: ({
-          context: {
-            result: { userId },
-          },
-        }) => ({ userId }),
+        // event.type이 FETCH일 때는 event.userId를 input으로 사용하고, 그렇지 않으면 userId를 1로 사용합니다.
+        input: ({ event }) => {
+          if (event.type === 'FETCH') {
+            return { userId: event.userId };
+          }
+          return { userId: 1 };
+        },
         onDone: {
           target: 'success',
-          actions: assign({ result: ({ event }) => event.output as ApiResult }),
+          actions: assign({
+            result: ({ event }) => event.output as ApiResult,
+          }),
         },
         onError: {
           target: 'failure',
-          actions: assign({ error: ({ event }) => event.error }),
+          actions: assign({
+            error: ({ event }) => event.error,
+          }),
         },
       },
     },

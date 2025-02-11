@@ -6,17 +6,18 @@ export const modalMachine = setup({
     events: {} as { type: 'close' } | { type: 'open' },
   },
   actions: {
-    closed: assign({
-      isOpen: ({ context }) => !context.isOpen,
-    }),
-    opened: assign({
-      isOpen: ({ context }) => !context.isOpen,
-    }),
+    setOpen: assign({ isOpen: (_ctx, _event) => true }),
+    setClose: assign({ isOpen: (_ctx, _event) => false }),
   },
 }).createMachine({
   context: { isOpen: false },
-  on: {
-    open: { actions: 'opened' },
-    close: { actions: 'closed' },
+  initial: 'closed',
+  states: {
+    closed: {
+      on: { open: { target: 'open', actions: 'setOpen' } },
+    },
+    open: {
+      on: { close: { target: 'closed', actions: 'setClose' } },
+    },
   },
 });

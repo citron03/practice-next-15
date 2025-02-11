@@ -39,7 +39,7 @@ const ModalXstate = () => {
           onClick={() => {
             sendApi({
               type: 'FETCH',
-              userId: 1,
+              userId: 10,
             });
           }}
         >
