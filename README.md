@@ -1,3 +1,5 @@
+## Practicing Next.js 15 & FE new tech
+
 ### init
 - corepack enable
 - yarn install
@@ -19,6 +21,11 @@
 - vanilla-extract
 - docker setting
 - pwa <a href="https://nextjs.org/docs/app/building-your-application/configuring/progressive-web-apps">reference docs</a>
+- github ci/cd
+- NextAuth.js
+- GraphQL & Apollo/Urql
+- Cypress, Playwright, Puppeteer
+- Turborepo
 
 #### TBD
 - yarn patch <a href="https://yarnpkg.com/cli/patch">reference docs</a>
