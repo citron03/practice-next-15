@@ -15,6 +15,7 @@
 - corepack <a href="https://nodejs.org/api/corepack.html">reference docs</a>
 - zx ready script (not yet)
 - xstate
+- stylelint
 
 #### TODO:
 - Shadcn/ui

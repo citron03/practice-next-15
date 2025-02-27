@@ -2,7 +2,12 @@
   "editor.formatOnSave": true, // 저장 시 자동 포매팅
   "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": true
   },
-  "prettier.requireConfig": true // 프로젝트에 Prettier 설정 파일이 있어야 포매팅
+  "prettier.requireConfig": true, // 프로젝트에 Prettier 설정 파일이 있어야 포매팅
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "scss", ".module.scss"],
+  "stylelint.enable": true,
 }

@@ -10,7 +10,8 @@
     "lint": "next lint",
     "prepare": "husky install",
     "ready-script": "node .scripts/ready-script.mjs",
-    "commit": "git add . && node .scripts/commit.mjs"
+    "commit": "git add . && node .scripts/commit.mjs",
+    "lint:css": "stylelint '**/*.{css,scss,sass}' --fix"
   },
   "dependencies": {
     "@xstate/react": "^5.0.2",
@@ -39,6 +40,9 @@
     "husky": "^8.0.0",
     "lint-staged": "^15.3.0",
     "prettier": "^3.4.2",
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-prettier": "^5.0.3",
     "typescript": "^5",
     "zx": "^8.3.0"
   },

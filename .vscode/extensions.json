@@ -14,5 +14,6 @@
 		"esbenp.prettier-vscode",
 		"robbowen.synthwave-vscode",
 		"britesnow.vscode-toggle-quotes",
+		"stylelint.vscode-stylelint"
 	]
 }
