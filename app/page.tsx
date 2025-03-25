@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import InstallButton from './components/InstallButton';
+
 export default function Home() {
   return (
     <div
@@ -16,6 +18,9 @@ export default function Home() {
       <Link href="/mouse-event-test">mouse event test</Link>
       <Link href="/modal-xstate">modal xstate</Link>
       <Link href="/next-modal/screen">next modal</Link>
+      <div>
+        <InstallButton />
+      </div>
     </div>
   );
 }

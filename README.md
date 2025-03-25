@@ -6,7 +6,6 @@
 - (todo) yarn ready-script
 - yarn dev
 
-
 ### roadmap
 
 - react 19 / react compiler
@@ -16,6 +15,7 @@
 - zx ready script (not yet)
 - xstate
 - stylelint
+- excalidraw
 
 #### TODO:
 - Shadcn/ui
@@ -30,3 +30,4 @@
 
 #### TBD
 - yarn patch <a href="https://yarnpkg.com/cli/patch">reference docs</a>
+- https://risingstars.js.org/2024/en
