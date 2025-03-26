@@ -18,6 +18,7 @@ export default function Home() {
       <Link href="/mouse-event-test">mouse event test</Link>
       <Link href="/modal-xstate">modal xstate</Link>
       <Link href="/next-modal/screen">next modal</Link>
+      <Link href="/tui-grid">Tui Grid</Link>
       <div>
         <InstallButton />
       </div>
