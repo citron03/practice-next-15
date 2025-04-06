@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 import React from 'react';
 
 import EnablePwa from './components/EnablePwa';
+import PushTestPwa from './components/PushTestPwa';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
         <EnablePwa />
+        <PushTestPwa />
       </body>
     </html>
   );
