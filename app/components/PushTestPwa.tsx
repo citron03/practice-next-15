@@ -35,7 +35,7 @@ export default function PushTestPwa() {
 
     reg.showNotification('✅ 알림 테스트', {
       body: 'PWA에서 보낸 푸시 알림입니다.',
-      icon: '/icons/icon-192x192.png', // 실제 존재하는 경로!
+      icon: '/icon-192x192.png', // 실제 존재하는 경로!
     });
   };
 
