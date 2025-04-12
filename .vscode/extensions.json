@@ -14,6 +14,10 @@
 		"esbenp.prettier-vscode",
 		"robbowen.synthwave-vscode",
 		"britesnow.vscode-toggle-quotes",
-		"stylelint.vscode-stylelint"
+		"stylelint.vscode-stylelint",
+		"wallabyjs.quokka-vscode",
+		"wallabyjs.console-ninja",
+		"monish.regexsnippets",
+		"pnp.polacode"
 	]
 }
