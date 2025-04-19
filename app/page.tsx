@@ -20,6 +20,7 @@ export default function Home() {
       <Link href="/next-modal/screen">next modal</Link>
       <Link href="/tui-grid">Tui Grid</Link>
       <Link href="/vanilla-extract-test">Vanilla Extract Test</Link>
+      <Link href="/semantic">Semantic</Link>
       <div>
         <InstallButton />
       </div>
