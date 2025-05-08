@@ -21,6 +21,7 @@ export default function Home() {
       <Link href="/tui-grid">Tui Grid</Link>
       <Link href="/vanilla-extract-test">Vanilla Extract Test</Link>
       <Link href="/semantic">Semantic</Link>
+      <Link href="/mdx-page">MDX Page</Link>
       <div>
         <InstallButton />
       </div>

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:webpack": "next dev",
     "dev:clean": "rm -rf .next && yarn dev",
     "build": "next build",
     "start": "next start",
@@ -14,6 +15,9 @@
     "lint:css": "stylelint '**/*.{css,scss,sass}' --fix"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.3.2",
     "@vanilla-extract/css": "^1.17.1",
     "@vanilla-extract/recipes": "^0.5.5",
     "@xstate/react": "^5.0.2",
