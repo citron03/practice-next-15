@@ -19,6 +19,7 @@
 - <a href="https://ui.toast.com/tui-grid">TUI GRID</a>
 - vanilla-extract <a href="https://vanilla-extract.style/documentation/integrations/next/">reference docs</a>
 - markdown with JSX aka mdx <a href="https://mdxjs.com/docs/getting-started/">reference docs</a>
+- vitest
 
 #### TODO:
 - Shadcn/ui
