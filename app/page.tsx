@@ -22,6 +22,7 @@ export default function Home() {
       <Link href="/vanilla-extract-test">Vanilla Extract Test</Link>
       <Link href="/semantic">Semantic</Link>
       <Link href="/mdx-page">MDX Page</Link>
+      <Link href="/virtual-list">Virtual List Page</Link>
       <div>
         <InstallButton />
       </div>
