@@ -23,6 +23,7 @@ export default function Home() {
       <Link href="/semantic">Semantic</Link>
       <Link href="/mdx-page">MDX Page</Link>
       <Link href="/virtual-list">Virtual List Page</Link>
+      <Link href="/context-menu">Context Menu Page</Link>
       <div>
         <InstallButton />
       </div>
