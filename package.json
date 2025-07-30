@@ -27,6 +27,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tui-grid": "^4.21.22",
+    "valtio": "^2.1.5",
     "xstate": "^5.19.2"
   },
   "devDependencies": {

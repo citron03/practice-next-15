@@ -24,6 +24,7 @@ export default function Home() {
       <Link href="/mdx-page">MDX Page</Link>
       <Link href="/virtual-list">Virtual List Page</Link>
       <Link href="/context-menu">Context Menu Page</Link>
+      <Link href="/signal">Signal Page</Link>
       <div>
         <InstallButton />
       </div>
