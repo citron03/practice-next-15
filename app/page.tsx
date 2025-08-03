@@ -25,6 +25,7 @@ export default function Home() {
       <Link href="/virtual-list">Virtual List Page</Link>
       <Link href="/context-menu">Context Menu Page</Link>
       <Link href="/signal">Signal Page</Link>
+      <Link href="/loadable">Loadable Component Page</Link>
       <div>
         <InstallButton />
       </div>
