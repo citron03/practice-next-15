@@ -26,6 +26,7 @@ export default function Home() {
       <Link href="/context-menu">Context Menu Page</Link>
       <Link href="/signal">Signal Page</Link>
       <Link href="/loadable">Loadable Component Page</Link>
+      <Link href="/index-db-test">IndexDB Page</Link>
       <div>
         <InstallButton />
       </div>
