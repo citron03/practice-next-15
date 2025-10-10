@@ -27,6 +27,7 @@ export default function Home() {
       <Link href="/signal">Signal Page</Link>
       <Link href="/loadable">Loadable Component Page</Link>
       <Link href="/index-db-test">IndexDB Page</Link>
+      <Link href="/events-demo">React Event Wrapper Page</Link>
       <div>
         <InstallButton />
       </div>
