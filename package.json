@@ -1,7 +1,43 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
     "web": "pnpm --filter web",
-    "web:dev": "pnpm run web dev"
+    "web:dev": "pnpm run web dev",
+    "commit": "pnpm --filter scripts commit",
+    "ready": "pnpm --filter scripts ready",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.ts": "pnpm exec eslint --fix",
+    "*.tsx": "pnpm exec eslint --fix",
+    "*.js": "pnpm exec eslint --fix",
+    "*.jsx": "pnpm exec eslint --fix",
+    "*.{ts,tsx,js,jsx}": "pnpm exec prettier --write"
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.40.0",
+    "@typescript-eslint/parser": "^8.40.0",
+    "eslint": "^9.34.0",
+    "eslint-config-next": "15.5.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.1",
+    "eslint-plugin-react-compiler": "npm:eslint-plugin-react-compiler@experimental",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.9.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^36.0.1"
   }
 }
