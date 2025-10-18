@@ -1,8 +1,5 @@
 [config]
 response_language = "ko-KR"
-use_repo_settings_file = true
-patch_extension_skip_types = [".md", ".txt"]
-ignore_pr_title = ["^\\[Auto\\]", "^Auto", "^\\[Skip\\]", "^Skip"]
 
 [pr_reviewer]
 extra_instructions = """\
