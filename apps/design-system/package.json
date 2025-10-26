@@ -1,0 +1,25 @@
+{
+  "name": "@citron03/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build": "build-storybook -o build",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "vitest",
+    "prepare": "pnpm -w install"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "^7.0.0",
+    "@storybook/addon-essentials": "^7.0.0",
+    "@storybook/addon-interactions": "^7.0.0",
+    "typescript": "^5.0.0"
+  }
+}
