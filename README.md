@@ -78,4 +78,4 @@ pnpm test
 I summarize things I learn while working on this repository on my blog: https://citron031.tistory.com/.
 You're welcome to stop by — I'd appreciate your feedback!
 
-이 레포에서 배운 내용들을 제 블로그(https://citron031.tistory.com/)에 정리하고 있습니다. 관심 있으시면 놀러와서 읽어주시고 피드백 남겨주세요.
+이 레포에서 배운 내용들을 제 블로그(https://citron031.tistory.com/) 에 정리하고 있습니다. 관심 있으시면 놀러와서 읽어주시고 피드백 남겨주세요.
