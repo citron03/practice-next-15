@@ -28,6 +28,7 @@ export default function Home() {
       <Link href="/loadable">Loadable Component Page</Link>
       <Link href="/index-db-test">IndexDB Page</Link>
       <Link href="/events-demo">React Event Wrapper Page</Link>
+      <Link href="/activity-demo">React Activity Test Page</Link>
       <div>
         <InstallButton />
       </div>
