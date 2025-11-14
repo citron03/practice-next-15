@@ -4,6 +4,8 @@
   "scripts": {
     "web": "pnpm --filter web",
     "web:dev": "pnpm run web dev",
+    "ds": "pnpm run web --filter @citron03/design-system",
+    "ds:dev": "pnpm run ds dev",
     "commit": "pnpm --filter scripts commit",
     "ready": "pnpm --filter scripts ready",
     "prepare": "husky"
