@@ -13,25 +13,25 @@
     "prepare": "pnpm -w install"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": "catalog:framework",
+    "react-dom": "catalog:framework"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "*",
-    "@storybook/addon-interactions": "*",
-    "@storybook/builder-vite": "*",
-    "@storybook/cli": "*",
-    "@storybook/react": "*",
-    "@storybook/react-vite": "*",
-    "storybook": "*",
-    "typescript": "*",
-    "vite": "*",
-    "@vanilla-extract/css": "*",
-    "@vanilla-extract/vite-plugin": "*"
+    "@storybook/addon-essentials": "catalog:storybook",
+    "@storybook/addon-interactions": "catalog:storybook",
+    "@storybook/builder-vite": "catalog:storybook",
+    "@storybook/cli": "catalog:storybook",
+    "@storybook/react": "catalog:storybook",
+    "@storybook/react-vite": "catalog:storybook",
+    "storybook": "catalog:storybook",
+    "typescript": "catalog:types",
+    "vite": "catalog:utilities",
+    "@vanilla-extract/css": "catalog:vanilla-extract",
+    "@vanilla-extract/vite-plugin": "catalog:vanilla-extract"
   },
   "dependencies": {
-    "@floating-ui/react": "*",
-    "@types/react-color": "*",
-    "react-color": "*"
+    "@floating-ui/react": "0.27.16",
+    "@types/react-color": "catalog:types",
+    "react-color": "catalog:utilities"
   }
 }

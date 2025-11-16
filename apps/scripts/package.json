@@ -12,8 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chalk": "*",
-    "inquirer": "*",
-    "zx": "*"
+    "chalk": "catalog:utilities",
+    "inquirer": "catalog:utilities",
+    "zx": "catalog:tools"
   }
 }
