@@ -1,0 +1,15 @@
+diff --git a/dist/tui-grid.css b/dist/tui-grid.css
+index 20d5551aea9bc49be05b1f316907026db27e989d..fa76f7199bd664df9c5c9ade0f7f1e34dde5b0d1 100644
+--- a/dist/tui-grid.css
++++ b/dist/tui-grid.css
+@@ -395,8 +395,8 @@
+   display: block;
+   overflow: hidden;
+   line-height: 1.5;
+-  *margin-left: -2px;
+-  *padding-left: 2px;
++  margin-left: -2px;
++  padding-left: 2px;
+ }
+ .tui-grid-cell-content input[type='text'],
+ .tui-grid-cell-content input[type='password'] {

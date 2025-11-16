@@ -14,17 +14,14 @@ const withMDX = withMdxCreate({
   extension: /\.mdx?$/,
 });
 
-const withVanillaExtract = createVanillaExtractPlugin({
-  identifiers: ({ hash }) => `vanilla_extract_${hash}`,
-});
+const withVanillaExtract = createVanillaExtractPlugin();
 
 const nextConfig: NextConfig = {
   /* config options here */
-  experimental: {
-    reactCompiler: true,
-  },
+  reactCompiler: true,
+  experimental: {},
   // useEffect 두 번 실행 방지
   reactStrictMode: false,
 };
 
-export default withMDX(withVanillaExtract(nextConfig));
+export default withVanillaExtract(withMDX(nextConfig));
