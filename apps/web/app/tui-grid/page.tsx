@@ -1,8 +1,13 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { useRef } from 'react';
 
-import TuiGridReact, { TuiGridReactRef } from '../components/TuiGridReact';
+import type { TuiGridReactRef } from '../components/TuiGridReact';
+
+const TuiGridReact = dynamic(() => import('../components/TuiGridReact'), {
+  ssr: false,
+});
 
 export default function TuiGridPage() {
   const gridRef = useRef<TuiGridReactRef>(null);

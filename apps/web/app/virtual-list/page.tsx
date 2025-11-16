@@ -6,7 +6,7 @@ import VirtualizedLisPadding from './padding'; // Adjust the import path as nece
 
 const items = Array.from({ length: 10000 }, (_, i) => `Item ${i + 1}`);
 
-export const VirtualListPage = () => {
+const VirtualListPage = () => {
   const [isAbsolute, setIsAbsolute] = useState(false);
 
   return (

@@ -7,7 +7,11 @@ const bufferCount = 5;
 const VirtualizedList = ({ items }: { items: string[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [startIdx, setStartIdx] = useState(0);
-  const visibleCount = Math.ceil(window.innerHeight / itemHeight) + bufferCount * 2;
+  const [visibleCount, setVisibleCount] = useState(0);
+
+  useEffect(() => {
+    setVisibleCount(Math.ceil(window.innerHeight / itemHeight) + bufferCount * 2);
+  }, []);
 
   const handleScroll = () => {
     if (!containerRef.current) return;

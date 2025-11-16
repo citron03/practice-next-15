@@ -1,81 +1,78 @@
-# Monorepo with Next.js, pnpm, and Turborepo
+# Next.js, pnpm, Turborepo를 사용한 모노레포
 
-This project has been restructured into a monorepo using pnpm workspaces and Turborepo.
+이 프로젝트는 pnpm 워크스페이스와 Turborepo를 사용하여 모노레포로 재구성되었습니다.
 
-## Structure
+## 구조
 
-- `apps`: Contains individual applications.
-  - `web`: The main Next.js application.
-- `packages`: Contains shared libraries, components, or utilities that can be used across different apps.
-  - (This directory is ready for you to add new packages.)
+- `apps`: 개별 애플리케이션을 포함합니다.
+  - `web`: 메인 Next.js 애플리케이션입니다.
+- `packages`: 여러 앱에서 사용할 수 있는 공유 라이브러리, 컴포넌트 또는 유틸리티를 포함합니다.
+  - (이 디렉토리에 새 패키지를 추가할 수 있습니다.)
 
-## Key Technologies
+## 주요 기술
 
-- **pnpm:** A fast and disk space-efficient package manager.
-- **Turborepo:** A high-performance build system for JavaScript and TypeScript codebases.
-- **Next.js:** The React framework for production.
+- **pnpm:** 빠르고 디스크 공간 효율적인 패키지 매니저입니다.
+- **Turborepo:** JavaScript 및 TypeScript 코드베이스를 위한 고성능 빌드 시스템입니다.
+- **Next.js:** 프로덕션용 React 프레임워크입니다.
 
-## Getting Started
+## 시작하기
 
-### 1. Installation
+### 1. 설치
 
-Install all dependencies from the root of the project. pnpm will automatically link the workspace packages.
+프로젝트의 루트에서 모든 종속성을 설치합니다. pnpm이 워크스페이스 패키지를 자동으로 연결합니다.
 
 ```bash
 pnpm install
 ```
 
-### 2. Development
+### 2. 개발
 
-To start the development server for the `web` application, run the following command from the root directory:
+`web` 애플리케이션의 개발 서버를 시작하려면 루트 디렉토리에서 다음 명령을 실행합니다.
 
 ```bash
 pnpm dev
 ```
 
-Turborepo will intelligently run the `dev` script defined in `apps/web/package.json`.
+Turborepo는 `apps/web/package.json`에 정의된 `dev` 스크립트를 지능적으로 실행합니다.
 
-### 3. Build
+### 3. 빌드
 
-To build all applications and packages in the monorepo, run this command from the root:
+모노레포의 모든 애플리케이션과 패키지를 빌드하려면 루트에서 다음 명령을 실행합니다.
 
 ```bash
 pnpm build
 ```
 
-Turborepo will cache the output and only rebuild what has changed, making the build process very fast.
+Turborepo는 출력을 캐시하고 변경된 내용만 다시 빌드하여 빌드 프로세스를 매우 빠르게 만듭니다.
 
-### 4. Linting and Testing
+### 4. 린팅 및 테스트
 
-You can run linting and testing for the entire monorepo from the root as well:
+루트에서 전체 모노레포에 대한 린팅 및 테스트를 실행할 수도 있습니다.
 
 ```bash
-# Lint all packages
+# 모든 패키지 린트
 pnpm lint
 
-# Run tests for all packages
+# 모든 패키지 테스트 실행
 pnpm test
 ```
 
-## Adding a New Package
+## 새 패키지 추가
 
-1.  Create a new directory inside the `packages` folder (e.g., `packages/ui-library`).
-2.  Inside the new directory, create a `package.json` file with a unique name (e.g., `"name": "@your-scope/ui-library"`).
-3.  Add any necessary dependencies and scripts to the new package's `package.json`.
-4.  You can now use this new package in your other applications (like `web`) by adding it as a dependency:
+1.  `packages` 폴더 내에 새 디렉토리를 만듭니다(예: `packages/ui-library`).
+2.  새 디렉토리 내에 고유한 이름을 가진 `package.json` 파일을 만듭니다(예: `"name": "@your-scope/ui-library"`).
+3.  새 패키지의 `package.json`에 필요한 종속성과 스크립트를 추가합니다.
+4.  이제 다른 애플리케이션(예: `web`)에서 이 새 패키지를 종속성으로 추가하여 사용할 수 있습니다.
 
     ```json
-    // In apps/web/package.json
+    // apps/web/package.json에서
     "dependencies": {
       "@your-scope/ui-library": "workspace:*"
     }
     ```
 
-5.  Run `pnpm install` from the root to link the new package.
+5.  루트에서 `pnpm install`을 실행하여 새 패키지를 연결합니다.
 
 ## Blog / 블로그
-
-I summarize things I learn while working on this repository on my blog: https://citron031.tistory.com/.
-You're welcome to stop by — I'd appreciate your feedback!
 
 이 레포에서 배운 내용들을 제 블로그(https://citron031.tistory.com/) 에 정리하고 있습니다. 관심 있으시면 놀러와서 읽어주시고 피드백 남겨주세요.

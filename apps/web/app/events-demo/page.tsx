@@ -2,33 +2,7 @@
 /* global CustomEvent, Event, EventListener, HTMLElement, HTMLDivElement */
 'use client';
 import React, { useCallback, useEffect, useState } from 'react';
-
-/**
- * 간단한 EventBus (CustomEvent 기반)
- */
-
-type EventMap = {
-  clickButton: { id: string };
-};
-
-export function dispatchAppEvent<K extends keyof EventMap>(name: K, detail: EventMap[K]) {
-  const e = new CustomEvent(name as string, { detail });
-  window.dispatchEvent(e);
-}
-
-export function useAppEventListener<K extends keyof EventMap>(
-  name: K,
-  handler: (detail: EventMap[K]) => void,
-) {
-  useEffect(() => {
-    const onEvent = (e: Event) => {
-      const ce = e as CustomEvent<EventMap[K]>;
-      handler(ce.detail);
-    };
-    window.addEventListener(name as string, onEvent as EventListener);
-    return () => window.removeEventListener(name as string, onEvent as EventListener);
-  }, [name, handler]);
-}
+import { dispatchAppEvent, useAppEventListener } from './eventBus';
 
 function OuterWrapper({
   children,

@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 interface RootLayoutProps {
   children: ReactNode;
-  modal?: ReactNode;
+  modal: ReactNode;
 }
 
 export default function Layout({ children, modal }: RootLayoutProps) {

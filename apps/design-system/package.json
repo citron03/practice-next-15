@@ -1,7 +1,7 @@
 {
   "name": "@citron03/design-system",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,19 +17,20 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "8.5.0",
-    "@storybook/addon-interactions": "8.5.0",
-    "@storybook/builder-vite": "8.5.0",
-    "@storybook/cli": "8.5.0",
-    "@storybook/react": "8.5.0",
-    "@storybook/react-vite": "8.5.0",
-    "storybook": "8.5.0",
+    "@storybook/addon-essentials": "*",
+    "@storybook/addon-interactions": "*",
+    "@storybook/builder-vite": "*",
+    "@storybook/cli": "*",
+    "@storybook/react": "*",
+    "@storybook/react-vite": "*",
+    "storybook": "*",
     "typescript": "*",
-    "vite": "5.4.21",
+    "vite": "*",
     "@vanilla-extract/css": "*",
     "@vanilla-extract/vite-plugin": "*"
   },
   "dependencies": {
+    "@floating-ui/react": "*",
     "@types/react-color": "*",
     "react-color": "*"
   }

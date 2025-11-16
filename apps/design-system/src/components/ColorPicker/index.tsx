@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SketchPicker, ColorResult } from 'react-color';
+import { useFloating, autoUpdate, offset, flip, shift } from '@floating-ui/react';
 import * as styles from './index.css';
 
 export interface ColorPickerProps {
@@ -10,25 +11,44 @@ export interface ColorPickerProps {
 }
 
 export const ColorPicker = ({ color, onChange }: ColorPickerProps): JSX.Element => {
-  const [displayColorPicker, setDisplayColorPicker] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [internalColor, setInternalColor] = useState(color);
+  const { refs, floatingStyles } = useFloating({
+    open: isOpen,
+    onOpenChange: setIsOpen,
+    middleware: [offset(10), flip(), shift()],
+    whileElementsMounted: autoUpdate,
+  });
 
-  const handleClick = () => {
-    setDisplayColorPicker(!displayColorPicker);
-  };
+  useEffect(() => {
+    setInternalColor(color);
+  }, [color]);
 
   const handleClose = () => {
-    setDisplayColorPicker(false);
+    setIsOpen(false);
+  };
+
+  const handleSketchPickerChange = (newColor: ColorResult) => {
+    setInternalColor(newColor.hex);
+  };
+
+  const handleSketchPickerChangeComplete = (newColor: ColorResult) => {
+    onChange(newColor);
   };
 
   return (
     <div>
-      <div className={styles.swatch} onClick={handleClick}>
+      <div ref={refs.setReference} className={styles.swatch} onClick={() => setIsOpen(!isOpen)}>
         <div className={styles.colorSwatch} style={{ background: color }} />
       </div>
-      {displayColorPicker ? (
-        <div className={styles.popover}>
+      {isOpen ? (
+        <div ref={refs.setFloating} style={floatingStyles} className={styles.popover}>
           <div className={styles.cover} onClick={handleClose} />
-          <SketchPicker color={color} onChange={onChange} />
+          <SketchPicker
+            color={internalColor}
+            onChange={handleSketchPickerChange}
+            onChangeComplete={handleSketchPickerChangeComplete}
+          />
         </div>
       ) : null}
     </div>
