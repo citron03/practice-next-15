@@ -13,22 +13,24 @@
     "prepare": "pnpm -w install"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "7.6.20",
-    "@storybook/addon-interactions": "7.6.20",
-    "@storybook/builder-vite": "7.6.20",
-    "@storybook/cli": "7.6.20",
-    "@storybook/react": "^7.6.20",
-    "@storybook/react-vite": "7.6.20",
-    "storybook": "7.6.20",
-    "typescript": "^5.0.0",
-    "vite": "^5.4.20"
+    "@storybook/addon-essentials": "8.5.0",
+    "@storybook/addon-interactions": "8.5.0",
+    "@storybook/builder-vite": "8.5.0",
+    "@storybook/cli": "8.5.0",
+    "@storybook/react": "8.5.0",
+    "@storybook/react-vite": "8.5.0",
+    "storybook": "8.5.0",
+    "typescript": "*",
+    "vite": "5.4.21",
+    "@vanilla-extract/css": "*",
+    "@vanilla-extract/vite-plugin": "*"
   },
   "dependencies": {
-    "@types/react-color": "^3.0.13",
-    "react-color": "^2.19.3"
+    "@types/react-color": "*",
+    "react-color": "*"
   }
 }

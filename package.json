@@ -23,29 +23,29 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@eslint/js": "^9.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.40.0",
-    "@typescript-eslint/parser": "^8.40.0",
-    "eslint": "^9.34.0",
-    "eslint-config-next": "15.5.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.35.1",
-    "eslint-plugin-react-compiler": "npm:eslint-plugin-react-compiler@experimental",
-    "eslint-plugin-react-hooks": "^7.0.0",
-    "eslint-plugin-simple-import-sort": "^12.1.0",
-    "husky": "^9.1.4",
-    "lint-staged": "^15.2.10",
-    "prettier": "^3.3.3",
-    "stylelint": "^16.9.0",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-standard": "^36.0.1"
+    "@commitlint/cli": "*",
+    "@commitlint/config-conventional": "*",
+    "@eslint/js": "*",
+    "@typescript-eslint/eslint-plugin": "*",
+    "@typescript-eslint/parser": "*",
+    "eslint": "*",
+    "eslint-config-next": "*",
+    "eslint-config-prettier": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-prettier": "*",
+    "eslint-plugin-react": "*",
+    "eslint-plugin-react-compiler": "*",
+    "eslint-plugin-react-hooks": "*",
+    "eslint-plugin-simple-import-sort": "*",
+    "husky": "*",
+    "lint-staged": "*",
+    "prettier": "*",
+    "stylelint": "*",
+    "stylelint-config-prettier": "*",
+    "stylelint-config-standard": "*"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "*",
+    "react-dom": "*"
   }
 }
