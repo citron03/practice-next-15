@@ -6,6 +6,8 @@ import React from 'react';
 
 import EnablePwa from './components/EnablePwa';
 import PushTestPwa from './components/PushTestPwa';
+import ThemeProvider from './components/ThemeProvider';
+import ThemeToggle from './components/ThemeToggle';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -31,9 +33,17 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-        <EnablePwa />
-        <PushTestPwa />
+        <ThemeProvider>
+          <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+            <header style={{ display: 'flex', justifyContent: 'flex-end', padding: 12, gap: 8 }}>
+              <ThemeToggle />
+            </header>
+            <main style={{ flex: 1 }}>{children}</main>
+          </div>
+
+          <EnablePwa />
+          <PushTestPwa />
+        </ThemeProvider>
       </body>
     </html>
   );
