@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { promises as fs } from 'fs';
-import path from 'path';
 import yaml from 'js-yaml';
+import path from 'path';
 
 const root = process.cwd();
 const workspaceYaml = path.join(root, 'pnpm-workspace.yaml');
@@ -47,14 +47,15 @@ function pickCatalogForPkg(catalogs, defaultCatalog, pkgName, preferOrder) {
     }
   }
   // check default catalog
-  if (defaultCatalog && Object.prototype.hasOwnProperty.call(defaultCatalog, pkgName)) return { catalogName: 'default' };
+  if (defaultCatalog && Object.prototype.hasOwnProperty.call(defaultCatalog, pkgName))
+    return { catalogName: 'default' };
   return null;
 }
 
 async function updatePackageJson(file, catalogs, defaultCatalog, preferOrder, dry) {
   const raw = await fs.readFile(file, 'utf8');
   const obj = JSON.parse(raw);
-  const sections = ['dependencies','devDependencies','peerDependencies','optionalDependencies'];
+  const sections = ['dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies'];
   let changed = false;
   const logs = [];
 
@@ -87,10 +88,24 @@ async function main() {
   const catalogs = ws.catalogs || {};
 
   // set a preferred order so that more specific groups win when a package appears in multiple catalogs
-  const preferOrder = ['framework','storybook','mdx','vanilla-extract','testing','eslint','style-and-format','tools','types','utilities'];
+  const preferOrder = [
+    'framework',
+    'storybook',
+    'mdx',
+    'vanilla-extract',
+    'testing',
+    'eslint',
+    'style-and-format',
+    'tools',
+    'types',
+    'utilities',
+  ];
 
   // gather package.json under workspace packages
-  const searchDirs = (ws.packages && Array.isArray(ws.packages)) ? ws.packages.map(p => p.replace(/\*$/, '').replace(/\/$/, '')) : ['apps','packages'];
+  const searchDirs =
+    ws.packages && Array.isArray(ws.packages)
+      ? ws.packages.map((p) => p.replace(/\*$/, '').replace(/\/$/, ''))
+      : ['apps', 'packages'];
   const pkgFiles = new Set();
   for (const d of searchDirs) {
     const dir = path.join(root, d || '');
@@ -98,7 +113,7 @@ async function main() {
       const stat = await fs.stat(dir);
       if (stat.isDirectory()) {
         const found = await findPackageJsons(dir);
-        found.forEach(f => pkgFiles.add(f));
+        found.forEach((f) => pkgFiles.add(f));
       }
     } catch (e) {
       // ignore missing
@@ -115,16 +130,29 @@ async function main() {
 
   let anyChanged = false;
   for (const file of pkgFiles) {
-    const { changed, logs } = await updatePackageJson(file, catalogs, defaultCatalog, preferOrder, dry);
-    logs.forEach(l => console.log(l));
+    const { changed, logs } = await updatePackageJson(
+      file,
+      catalogs,
+      defaultCatalog,
+      preferOrder,
+      dry,
+    );
+    logs.forEach((l) => console.log(l));
     anyChanged = anyChanged || changed;
   }
 
   if (dry) {
     console.log('\n--dry run: no files were modified.');
   } else {
-    console.log(anyChanged ? '\nApplied catalog references to package.json files.' : '\nNo changes applied (already using catalogs or no matching catalog entries).');
+    console.log(
+      anyChanged
+        ? '\nApplied catalog references to package.json files.'
+        : '\nNo changes applied (already using catalogs or no matching catalog entries).',
+    );
   }
 }
 
-main().catch(err => { console.error(err); process.exit(1); });
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
