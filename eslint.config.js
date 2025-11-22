@@ -5,8 +5,21 @@ import importPlugin from 'eslint-plugin-import';
 import prettierPlugin from 'eslint-plugin-prettier';
 import reactCompilerPlugin from 'eslint-plugin-react-compiler';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import globals from 'globals';
 
 export default [
+  {
+    ignores: [
+      'node_modules/',
+      'apps/web/.next/',
+      '.turbo/',
+      'dist/',
+      'build/',
+      'coverage/',
+      'apps/web/public/service-worker.js',
+      'eslint.config.js',
+    ],
+  },
   js.configs.recommended,
   {
     plugins: {
@@ -21,6 +34,7 @@ export default [
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
+        ...globals.browser,
         window: 'readonly',
         document: 'readonly',
       },
@@ -36,6 +50,14 @@ export default [
       'no-unused-vars': 'warn',
       'react-compiler/react-compiler': 'error',
       'prettier/prettier': 'error',
+    },
+  },
+  {
+    files: ['apps/scripts/**/*.mjs', 'scripts/**/*.mjs'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
     },
   },
 ];
