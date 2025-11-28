@@ -12,6 +12,11 @@ import {
   X,
 } from 'lucide-react';
 
+const linkStyles =
+  'flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2';
+const activeLinkStyles =
+  'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2';
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [groupedExpanded, setGroupedExpanded] = useState<Record<string, boolean>>({});
@@ -53,11 +58,8 @@ export default function Header() {
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
+            className={linkStyles}
+            activeProps={{ className: activeLinkStyles }}
           >
             <Home size={20} />
             <span className="font-medium">Home</span>
@@ -68,11 +70,8 @@ export default function Header() {
           <Link
             to="/demo/start/server-funcs"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
+            className={linkStyles}
+            activeProps={{ className: activeLinkStyles }}
           >
             <SquareFunction size={20} />
             <span className="font-medium">Start - Server Functions</span>
@@ -81,25 +80,29 @@ export default function Header() {
           <Link
             to="/demo/start/api-request"
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}
+            className={linkStyles}
+            activeProps={{ className: activeLinkStyles }}
           >
             <Network size={20} />
             <span className="font-medium">Start - API Request</span>
+          </Link>
+
+          <Link
+            to="/comlink"
+            onClick={() => setIsOpen(false)}
+            className={linkStyles}
+            activeProps={{ className: activeLinkStyles }}
+          >
+            <Network size={20} />
+            <span className="font-medium">Comlink Demo</span>
           </Link>
 
           <div className="flex flex-row justify-between">
             <Link
               to="/demo/start/ssr"
               onClick={() => setIsOpen(false)}
-              className="flex-1 flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-              activeProps={{
-                className:
-                  'flex-1 flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-              }}
+              className={`flex-1 ${linkStyles}`}
+              activeProps={{ className: `flex-1 ${activeLinkStyles}` }}
             >
               <StickyNote size={20} />
               <span className="font-medium">Start - SSR Demos</span>
@@ -125,11 +128,8 @@ export default function Header() {
               <Link
                 to="/demo/start/ssr/spa-mode"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-                activeProps={{
-                  className:
-                    'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-                }}
+                className={linkStyles}
+                activeProps={{ className: activeLinkStyles }}
               >
                 <StickyNote size={20} />
                 <span className="font-medium">SPA Mode</span>
@@ -138,11 +138,8 @@ export default function Header() {
               <Link
                 to="/demo/start/ssr/full-ssr"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-                activeProps={{
-                  className:
-                    'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-                }}
+                className={linkStyles}
+                activeProps={{ className: activeLinkStyles }}
               >
                 <StickyNote size={20} />
                 <span className="font-medium">Full SSR</span>
@@ -151,11 +148,8 @@ export default function Header() {
               <Link
                 to="/demo/start/ssr/data-only"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-                activeProps={{
-                  className:
-                    'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-                }}
+                className={linkStyles}
+                activeProps={{ className: activeLinkStyles }}
               >
                 <StickyNote size={20} />
                 <span className="font-medium">Data Only</span>
