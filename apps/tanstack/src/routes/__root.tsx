@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools';
 import { TanStackDevtools } from '@tanstack/react-devtools';
 
 import Header from '../components/Header';
+import { LocatorJSInit } from '../components/LocatorJSInit';
 
 import appCss from '../styles.css?url';
 
@@ -38,6 +39,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <LocatorJSInit />
         <Header />
         {children}
         <TanStackDevtools
