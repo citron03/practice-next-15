@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export function LocatorJSInit() {
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (import.meta.env.DEV && typeof window !== 'undefined') {
       import('@locator/runtime');
     }
   }, []);
